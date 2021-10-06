@@ -100,10 +100,10 @@ public class ResTest {
     MiniClient c = new MiniClient();
     c.setAddressPort(HTTP_ADDRESS, HTTP_PORT);
     try {
-
+      JSONObject pl = new JSONObject();
       c.setLogin(testAgent.getIdentifier(), testPass);
-      ClientResponse result = c.sendRequest("GET", mainPath + "/songs", "",
-        MediaType.TEXT_PLAIN, MediaType.APPLICATION_JSON, new HashMap<String,String>());
+      ClientResponse result = c.sendRequest("GET", mainPath + "/songs", pl.toJSONString(),
+        MediaType.APPLICATION_JSON, MediaType.APPLICATION_JSON, new HashMap<String,String>());
       assertTrue(true); // change here
       System.out.println("Result of 'testgetSongs': " + result.getResponse().trim());
     } catch (Exception e) {

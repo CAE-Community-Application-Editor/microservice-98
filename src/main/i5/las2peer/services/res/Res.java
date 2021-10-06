@@ -81,9 +81,9 @@ public class Res extends RESTService {
 
   @Api
   @SwaggerDefinition(
-      info = @Info(title = "98", version = "$Metadata_Version$",
-          description = "$Metadata_Description$",
-          termsOfService = "$Metadata_Terms$",
+      info = @Info(title = "98", version = "",
+          description = "",
+          termsOfService = "",
           contact = @Contact(name = "", email = "CAEAddress@gmail.com") ,
           license = @License(name = "BSD",
               url = "https://github.com/CAE-Community-Application-Editor/microservice-98/blob/master/LICENSE.txt") ) )
@@ -97,7 +97,7 @@ public class Res extends RESTService {
    * getSongs
    *
    * 
-   *
+   * @param pl  a JSONObject
    * 
    * @return Response 
    * 
@@ -110,7 +110,8 @@ public class Res extends RESTService {
        @ApiResponse(code = HttpURLConnection.HTTP_OK, message = "resp")
   })
   @ApiOperation(value = "getSongs", notes = " ")
-  public Response getSongs() {
+  public Response getSongs(String pl) {
+    JSONObject pl_JSON = (JSONObject) JSONValue.parse(pl);
 
 
 
