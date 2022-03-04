@@ -92,6 +92,28 @@ public class ResTest {
 
   /**
    * 
+   * Test for the methodname method.
+   * 
+   */
+  @Test
+  public void testmethodname() {
+    MiniClient c = new MiniClient();
+    c.setAddressPort(HTTP_ADDRESS, HTTP_PORT);
+    try {
+      JSONObject jsonpayload_name = new JSONObject();      String pathparam_name = "initialized";
+      c.setLogin(testAgent.getIdentifier(), testPass);
+      ClientResponse result = c.sendRequest("GET", mainPath + "/methodpath", jsonpayload_name.toJSONString(),
+        MediaType.APPLICATION_JSON, MediaType.APPLICATION_JSON, new HashMap<String,String>());
+      assertTrue(true); // change here
+      System.out.println("Result of 'testmethodname': " + result.getResponse().trim());
+    } catch (Exception e) {
+      e.printStackTrace();
+      fail("Exception: " + e);
+    }
+  }
+
+  /**
+   * 
    * Test for the getSongs method.
    * 
    */

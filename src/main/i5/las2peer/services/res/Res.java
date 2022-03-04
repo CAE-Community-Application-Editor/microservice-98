@@ -94,6 +94,62 @@ public class Res extends RESTService {
 
       /**
    * 
+   * methodname
+   *
+   * 
+   * @param pathparam_name  a String
+   * @param jsonpayload_name  a JSONObject
+
+   * 
+   * @return Response 
+   * 
+   */
+  @GET
+  @Path("/methodpath")
+  @Produces(MediaType.APPLICATION_JSON)
+  @Consumes(MediaType.TEXT_PLAIN)
+  @ApiResponses(value = {
+       @ApiResponse(code = HttpURLConnection.HTTP_OK, message = "ok_name"),
+       @ApiResponse(code = HttpURLConnection.HTTP_UNAUTHORIZED, message = "unauth_name")
+  })
+  @ApiOperation(value = "methodname", notes = " ")
+  public Response methodname(@PathParam("pathparam_name") String pathparam_name, String jsonpayload_name) {
+    JSONObject jsonpayload_name_JSON = (JSONObject) JSONValue.parse(jsonpayload_name);
+
+
+
+
+     
+    // service method invocations
+
+     
+
+
+
+
+    // ok_name
+    boolean ok_name_condition = true;
+    if(ok_name_condition) {
+      JSONObject ok_res_name = new JSONObject();
+
+      
+
+      return Response.status(HttpURLConnection.HTTP_OK).entity(ok_res_name.toJSONString()).build();
+    }
+    // unauth_name
+    boolean unauth_name_condition = true;
+    if(unauth_name_condition) {
+      JSONObject unauth_res_name = new JSONObject();
+
+      
+
+      return Response.status(HttpURLConnection.HTTP_UNAUTHORIZED).entity(unauth_res_name.toJSONString()).build();
+    }
+    return null;
+  }
+
+  /**
+   * 
    * getSongs
    *
    * 
